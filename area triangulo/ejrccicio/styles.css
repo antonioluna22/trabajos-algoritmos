@@ -1,0 +1,43 @@
+#appBg{
+    height: 420px;
+    width: 300px;
+    border: 1px solid rgb(18, 9, 9);
+    border-radius: 5px;
+}
+
+#appBg form {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(16, 7, 7);
+}
+
+#appBg input[type=textfield]{
+    height: 25%;
+    width: 80%;
+    cursor: default;
+    font-family: sans-serif;
+    background-color: rgb(17, 8, 8);
+    color: white;
+    padding: 15px; 
+    text-align: right;
+    font-size: 50px;
+    border: 1px;
+    outline: none;
+}
+
+#appBg input[type=button],input[type=reset]{
+    width: 22%;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: #000;
+    padding: 18px;
+    margin: 3px;
+    border: 0;
+    border-radius: 100%;
+}
+
+
+
+

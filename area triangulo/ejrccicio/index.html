@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convertir Calificaciones</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    input[type="number"] {
+        width: 50px;
+    }
+</style>
+</head>
+<body>
+<h2>Convertir Calificaciones</h2>
+<form id="calificacionesForm">
+    <label for="calificacion">Calificación (1-20):</label>
+    <input type="number" id="calificacion" min="1" max="20" required>
+    <button type="submit">Convertir</button>
+</form>
+<div id="resultado"></div>
+
+<script>
+document.getElementById('calificacionesForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var calificacion = parseInt(document.getElementById('calificacion').value);
+
+    // Convertir la calificación
+    var resultado = convertirCalificacion(calificacion);
+
+    // Mostrar el resultado
+    document.getElementById('resultado').innerHTML = "<p>La calificación convertida es: " + resultado + "</p>";
+});
+
+function convertirCalificacion(calificacion) {
+    if (calificacion >= 17) {
+        return 'A - Excelente: ¡Felicidades!';
+    } else if (calificacion >= 14) {
+        return 'B - Muy bien, sigue así.';
+    } else if (calificacion >= 11) {
+        return 'C - Aprobado, pero puedes mejorar.';
+    } else if (calificacion >= 8) {
+        return 'D - Necesitas esforzarte más.';
+    } else {
+        return 'E - Insuficiente, debes estudiar más.';
+    }
+}
+</script>
+</body>
+</html>

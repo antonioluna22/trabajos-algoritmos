@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convertidor de Número a Fecha</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    input[type="number"] {
+        width: 50px;
+    }
+</style>
+</head>
+<body>
+<h2>Convertidor de Número a Fecha</h2>
+<form id="numeroFechaForm">
+    <label for="numero">Número de días:</label>
+    <input type="number" id="numero" min="1" required>
+    <button type="submit">Convertir</button>
+</form>
+<div id="resultado"></div>
+
+<script>
+document.getElementById('numeroFechaForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var numero = parseInt(document.getElementById('numero').value);
+
+    // Obtener la fecha actual
+    var fechaActual = new Date();
+
+    // Sumar el número de días ingresado
+    fechaActual.setDate(fechaActual.getDate() + numero);
+
+    // Formatear la fecha como string
+    var resultado = fechaActual.toLocaleDateString();
+
+    // Mostrar el resultado
+    document.getElementById('resultado').innerHTML = "<p>La fecha después de " + numero + " días es: " + resultado + "</p>";
+});
+</script>
+</body>
+</html>
